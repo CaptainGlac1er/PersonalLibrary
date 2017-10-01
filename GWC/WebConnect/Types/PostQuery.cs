@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace GWC.WebConnect.Types
 {
-    class PostQuery : HttpConnection
+    public class PostQuery : HttpConnection
     {
         public PostQuery(string url, NameValueCollection headers, NameValueCollection postdata, string contentType = "application/x-www-form-urlencoded") : base(url, headers, contentType)
         {

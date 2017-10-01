@@ -47,6 +47,7 @@
     <Compile Include="Cleverbot\Cleverbot.cs" />
     <Compile Include="Cleverbot\DataTypes\CleverbotReply.cs" />
     <Compile Include="Cleverbot\DataTypes\CleverbotToken.cs" />
+    <Compile Include="Conversions\NumberToText.cs" />
     <Compile Include="FileSystem\FileData.cs" />
     <Compile Include="FileSystem\FileSystem.cs" />
     <Compile Include="FileSystem\IFileType.cs" />

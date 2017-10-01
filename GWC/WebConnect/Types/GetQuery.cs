@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GWC.WebConnect.Types
 {
-    class GetQuery : HttpConnection
+    public class GetQuery : HttpConnection
     {
         public GetQuery(string url, NameValueCollection headers, string contentType = "application/x-www-form-urlencoded") : base(url, headers, contentType)
         {

@@ -19,6 +19,11 @@ namespace GWC.WeatherUnderground
         private readonly string WEATHERUNDERGROUNDENDPOINT = "http://api.wunderground.com/api/";
         private WeatherToken WeatherUndergroundConnection;
         private WebConnection WebConnection;
+        public enum QueryType
+        {
+            satellite,
+            conditions
+        }
         public WeatherUnderground(WebConnection webconnection)
         {
             WebConnection = webconnection;
@@ -35,9 +40,9 @@ namespace GWC.WeatherUnderground
             }
             return true;
         }
-        public async Task<WeatherUndergroundResponse> QuerySearch(string query)
+        public async Task<WeatherUndergroundResponse> QuerySearch(QueryType type, string query)
         {
-            string url = string.Format("{0}{1}/conditions/q/{2}.json", WEATHERUNDERGROUNDENDPOINT, WeatherUndergroundConnection.Token, query);
+            string url = string.Format("{0}{1}/{2}/q/{3}.json", WEATHERUNDERGROUNDENDPOINT, WeatherUndergroundConnection.Token, type.ToString(), query);
             HttpWebResponse request = await WebConnection.MakeRequest(new GetQuery(url, new NameValueCollection()));
             if (request.StatusCode != HttpStatusCode.OK)
             {

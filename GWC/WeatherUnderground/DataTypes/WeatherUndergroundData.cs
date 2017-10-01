@@ -133,10 +133,17 @@ namespace GWC.WeatherUnderground.DataTypes
         public string ob_url { get; set; }
         public string nowcast { get; set; }
     }
+    public class Satellite
+    {
+        public string image_url { get; set; }
+        public string image_url_ir4 { get; set; }
+        public string image_url_vis { get; set; }
+    }
 
     public class WeatherUndergroundResponse
     {
         public Response response { get; set; }
         public CurrentObservation current_observation { get; set; }
+        public Satellite satellite { get; set; }
     }
 }
